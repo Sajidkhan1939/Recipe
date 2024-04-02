@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./Style.css">
+  <title>Home</title>
+</head>
+
+<body>
+  <div style="white-space: nowrap; width: 1200px;">
+    <div class="first">
+      <div class="left">
+        <h1 id="main-heading">
+          Recipe Box
+        </h1>
+        <div class="sidebar-button"><a href="#" onclick="switchTab('recipe-edit-container')">Add a New Recipe</a></div>
+        <div class="sidebar-button"><a href="#" onclick="switchTab('view-all-recipe-container')">Show All Recipes</a></div>
+        <div class="sidebar-button" id="remove-all"><a href="#" onclick="removeAll()">Remove All Recipes</a></div>
+        <h4 class="list-status">List is Empty</h4>
+      </div>
+    </div>
+    <div class="second">
+      <div class="top"></div>
+      <div class="recipe-edit-container">
+        <h3 class="recipe-edit-heading">Add a New Recipe</h3>
+        <input type="hidden" id="custId" name="custId" value="0">
+        <input class="recipe-edit-title" type="text" name="" id="recipe-title" placeholder="Title of the Recipe" autocomplete="off" style="font: 400 13.3333px Arial;">
+        <textarea name="" id="recipe-ingrediants" cols="30" rows="10" class="recipe-edit-textarea" placeholder="Ingrediants" style="font: 18px 'Arial Regular', Arial;"></textarea>
+        <div style="display: flex; justify-content: flex-end;">
+          <button class="recipe-edit-button" onclick="switchTab('recipe-edit-container')" id="cancel">Cancel Recipe</button>
+          <button class="recipe-edit-button" onclick="submitRecipe()" id="save">Submit Recipe</button>
+        </div>
+      </div>
+      <div class="view-all-recipe-container" style="display: none;">
+        <h2 class="view-all-recipe-container-heading">Recipe List</h2>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="./Scripts.js"></script>
+</body>
+
+</html>
